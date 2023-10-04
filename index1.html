@@ -1,0 +1,189 @@
+<!doctype html>
+<html> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Порталиус</title> 
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <style type="text/css" id="dcoder_stylesheet">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #667eea;
+    color: white;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+section {
+    padding: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact form input, #contact form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#contact form button {
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+}
+
+footer {
+    background: #667eea;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+></style></head> 
+ <body>   
+   <audio src="fon.mp3" autoplay="autoplay">
+Тег audio не поддерживается вашим браузером. Необходимо обновить браузер!
+</audio>
+  <header> 
+   <nav> 
+    <h3 class="logo">Порталиус</h3> 
+    <ul> 
+     <li><a href="#about-us">Обо мне</a></li> 
+     <li><a href="#services">Проекты</a></li> 
+    </ul> 
+   </nav> 
+   <section class="hero"> 
+    <h1>HTML - Просто!</h1> 
+   </section> 
+  </header> 
+  <main> 
+   <section id="about-us"> 
+    <h2>Обо мне</h2> 
+    <p>Привет! Я Ярослав мне 11 лет, и я умею желать сайты. Моим помощником является Chat-GPT который помогает мне в трудных ситуациях.</p> 
+   </section> 
+   <section id="services"> 
+    <h2>Мои Проекты</h2> 
+    <ul> 
+     <li>yuTube (HTML)</li> 
+     <li>YES,NO (HTML, JAVASCRIPT)</li> 
+     <li>Xoro Browser (JAVA)</li> 
+    </ul> 
+   </section> 
+  </main> 
+  <footer> 
+   <p>©2023 Порталиус</p> 
+  </footer> 
+  <style>
+        #mydiv {
+            position: absolute;
+            z-index: 9;
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        #mydivheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        .minimize {
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            right: 30px;
+        }
+
+        .close {
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            right: 10px; 
+        }
+    </style> 
+  <div id="mydiv"> 
+   <div id="mydivheader"> <span class="minimize">-</span> <span class="close">x</span> 
+    <p>Это сделал я!!</p> 
+   </div> 
+   <p>ChatGPT сделал это окно.</p> 
+  </div> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+var myDiv = document.getElementById("mydiv");
+var header = document.getElementById("mydivheader");
+var minimize = document.querySelector(".minimize");
+var close = document.querySelector(".close");
+var initialHeight = myDiv.offsetHeight + "px"; 
+
+header.onmousedown = function(e) {
+    e = e || window.event;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDrag;
+    document.onmousemove = drag;
+};
+
+function drag(e) {
+    e = e || window.event;
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    myDiv.style.top = (myDiv.offsetTop - pos2) + "px";
+    myDiv.style.left = (myDiv.offsetLeft - pos1) + "px";
+}
+
+function closeDrag() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+}
+
+minimize.onclick = function() {
+    myDiv.style.height = myDiv.style.height === "30px" ? initialHeight : "30px";
+}
+
+close.onclick = function() {
+    myDiv.style.display = "none";
+}</script></body></html>
